@@ -14,7 +14,7 @@
           :key="item.id"
           exact
           link
-          :to="`/projects/${item.id}`"
+          :to="`/projects/${item.name}`"
         >
           {{ item.name }}
         </v-list-item>
@@ -24,6 +24,7 @@
 </template>
 
 <script setup lang="ts">
+import { defineComponent } from 'vue';
 import { ref, onMounted } from 'vue';
 import { useGithub } from '@/store/github';
 

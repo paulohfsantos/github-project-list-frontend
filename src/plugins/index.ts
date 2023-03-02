@@ -6,12 +6,10 @@
 
 // Plugins
 import { loadFonts } from './webfontloader'
-// import { createPinia } from 'pinia'
 import vuetify from './vuetify'
 import pinia from '../store'
 import router from '../router'
-
-// const pinia = createPinia()
+import dashRemove from './dashRemove'
 
 // Types
 import type { App } from 'vue'
@@ -22,4 +20,5 @@ export function registerPlugins (app: App) {
     .use(vuetify)
     .use(router)
     .use(pinia)
+    .use(dashRemove)
 }
