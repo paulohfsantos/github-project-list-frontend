@@ -2,7 +2,7 @@
   <div class="main__layout">
     <v-app-bar app dark>
       <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <v-toolbar-title>kekw</v-toolbar-title>
+      <v-toolbar-title>Portfolio</v-toolbar-title>
     </v-app-bar>
     <v-navigation-drawer app clipped dark v-model="drawer">
       <v-list dense>
