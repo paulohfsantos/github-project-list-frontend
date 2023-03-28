@@ -5,7 +5,7 @@
 
     <layout />
 
-    <v-container fluid>
+    <v-container :style="{ maxWidth: '1000px' }">
       <router-view />
     </v-container>
   </v-main>

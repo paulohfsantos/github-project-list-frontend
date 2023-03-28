@@ -7,7 +7,7 @@ import { defineConfig, loadEnv } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
-export default ({ mode }) => {
+export default ({ mode }: { mode: string }) => {
   process.env = {...process.env, ...loadEnv(mode, process.cwd())};
 
   const config = {
@@ -18,10 +18,12 @@ export default ({ mode }) => {
       // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
       vuetify({ autoImport: true }),
     ],
-    define: { 'process.env': {
-      NODE_ENV: JSON.stringify(process.env.NODE_ENV),
-      VUE_APP_API_LOCAL: JSON.stringify(process.env.VUE_APP_API_LOCAL),
-    } },
+    define: {
+      'process.env': {
+        NODE_ENV: process.env.NODE_ENV,
+        API_LOCAL: process.env.VITE_VUE_APP_API_LOCAL,
+      }
+    },
     resolve: {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url))

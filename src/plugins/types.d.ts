@@ -4,5 +4,6 @@ import { ComponentCustomProperties } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     $dashRemove: (str: string) => string
+    $lowercase: (str: string) => string
   }
 }
