@@ -1,41 +1,50 @@
 <template>
   <div class="main__layout">
-    <v-app-bar app dark>
-      <v-app-bar-nav-icon @click="drawer = !drawer" />
-      <v-toolbar-title>Portfolio</v-toolbar-title>
-    </v-app-bar>
-    <v-navigation-drawer app clipped dark v-model="drawer">
-      <v-list dense>
-        <v-list-item link exact to="/">
-          <v-list-item-title>Home</v-list-item-title>
-        </v-list-item>
+    <div class="d-flex justify-space-around align-center">
+      <v-list class="d-flex">
         <v-list-item
-          v-for="item in github.repositories"
-          :key="item.id"
           exact
-          link
-          :to="`/projects/${item.name}`"
-        >
-          {{ item.name }}
-        </v-list-item>
+          v-for="item in items"
+          :key="item.text"
+          :to="item.to"
+          :title="item.text"
+        ></v-list-item>
       </v-list>
-    </v-navigation-drawer>
+
+      <div class="theme__toggle">
+        <!-- <v-switch
+          v-model="dark"
+          :label="dark ? 'Dark' : 'Light'"
+          color="primary"
+          @change="toggleTheme"
+        /> -->
+        <v-btn>fodase</v-btn>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { defineComponent } from 'vue';
-import { ref, onMounted } from 'vue';
+import { onMounted } from 'vue';
 import { useGithub } from '@/store/github';
 
-const drawer = ref(false);
+const items = [
+  { text: 'Home', to: '/' },
+  { text: 'About', to: '/about' },
+  { text: 'Projects', to: '/projects' },
+  // { text: 'Contact', to: '/contact' },
+];
+
 const github = useGithub();
 
 const setUpRepositories = async () => {
   await github.getRepositoryByCount('paulohfsantos', 8);
+  await github.getRepoUser('paulohfsantos');
 };
 
-onMounted(async () => {
-  await setUpRepositories();
-});
+// theme toggle
+
+onMounted(() => { setUpRepositories() });
 </script>
+
+<style lang="scss"></style>

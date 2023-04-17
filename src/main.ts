@@ -8,10 +8,9 @@ import { createApp } from 'vue'
 // Plugins
 import { registerPlugins } from '@/plugins'
 
-axios.defaults.baseURL = import.meta.env.API_LOCAL as string;
-
 const app = createApp(App)
-
 registerPlugins(app)
+
+console.log(import.meta.env);
 
 app.mount('#app')

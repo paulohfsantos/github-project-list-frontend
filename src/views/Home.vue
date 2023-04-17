@@ -1,5 +1,9 @@
 <template>
   <div class="home">
-    home
+    <v-card density="comfortable" :width="1000">
+      <v-card-title>
+        Home
+      </v-card-title>
+    </v-card>
   </div>
 </template>

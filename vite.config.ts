@@ -8,7 +8,9 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default ({ mode }: { mode: string }) => {
-  process.env = {...process.env, ...loadEnv(mode, process.cwd())};
+  const env = {...process.env, ...loadEnv(mode, process.cwd())};
+
+  // console.log('env', process.env);
 
   const config = {
     plugins: [
@@ -21,7 +23,7 @@ export default ({ mode }: { mode: string }) => {
     define: {
       'process.env': {
         NODE_ENV: process.env.NODE_ENV,
-        API_LOCAL: process.env.VITE_VUE_APP_API_LOCAL,
+        API_LOCAL: process.env.VITE_API_LOCAL,
       }
     },
     resolve: {

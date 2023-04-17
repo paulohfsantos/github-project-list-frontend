@@ -19,6 +19,8 @@ export const useGithub = defineStore('github', {
       try {
         const response = await GithubService.getRepositories(username);
         this.repositories = response.data;
+
+        console.log(this.repositories);
       }
       catch (error: unknown) {
         ExceptionHander.handle(error as Error);
