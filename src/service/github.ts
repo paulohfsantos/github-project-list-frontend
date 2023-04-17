@@ -2,8 +2,6 @@ import { AxiosResponse } from 'axios';
 import { GitHubRepository } from '@/types/github';
 import { api } from '@/service/api';
 
-console.log(`API URL: ${import.meta.env.VITE_API_LOCAL as string}`);
-
 export const GithubService = {
   getRepositories: async (username: string): Promise<AxiosResponse<GitHubRepository[]>> => {
     return await api.get(`/repos/${username}`);
