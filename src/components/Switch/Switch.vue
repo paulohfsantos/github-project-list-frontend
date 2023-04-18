@@ -14,6 +14,7 @@ import { computed, ref } from 'vue';
 import { useTheme } from 'vuetify';
 import { useCustomTheme } from '@/store/theme';
 
+// could not find Vuetify theme injection
 const theme = useTheme();
 
 const darkMode = ref(theme.name.value === 'dark');

@@ -1,6 +1,7 @@
 import { useSnackbar } from "@/store/snackbar";
+import pinia from "../store";
 
-const snackbar = useSnackbar();
+const snackbar = useSnackbar(pinia);
 
 export const ExceptionHander = {
   handle(error: Error) {

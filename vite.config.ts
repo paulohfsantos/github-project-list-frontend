@@ -10,8 +10,6 @@ import { fileURLToPath, URL } from 'node:url'
 export default ({ mode }: { mode: string }) => {
   const env = {...process.env, ...loadEnv(mode, process.cwd())};
 
-  // console.log('env', process.env);
-
   const config = {
     plugins: [
       vue({
@@ -24,6 +22,7 @@ export default ({ mode }: { mode: string }) => {
       'process.env': {
         NODE_ENV: process.env.NODE_ENV,
         API_LOCAL: process.env.VITE_API_LOCAL,
+        VITEST: process.env.VITE_VITEST,
       }
     },
     resolve: {

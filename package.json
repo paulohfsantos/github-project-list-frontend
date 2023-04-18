@@ -5,7 +5,8 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "test": "vitest"
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
@@ -24,8 +25,10 @@
     "@types/webfontloader": "^1.6.35",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/test-utils": "^2.3.2",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
+    "jsdom": "^21.1.1",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
     "typescript": "^4.0.0",

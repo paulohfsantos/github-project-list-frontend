@@ -44,5 +44,3 @@ const setUpRepositories = async () => {
 
 onMounted(() => { setUpRepositories() });
 </script>
-
-<style lang="scss"></style>
