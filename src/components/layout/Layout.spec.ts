@@ -4,9 +4,9 @@ import { mount } from '@vue/test-utils'
 import Layout from './Layout.vue'
 
 describe('Layout', () => {
-  test('render layout', () => {
+  test('should render', () => {
     const wrapper = mount(Layout)
 
-    expect(wrapper.exists()).toBe(true)
+    expect(wrapper.html()).toMatchSnapshot()
   })
 })
